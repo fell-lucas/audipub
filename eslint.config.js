@@ -27,6 +27,18 @@ export default tseslint.config(
 		}
 	},
 	{
+		rules: {
+			"@typescript-eslint/no-unused-vars": [
+				"error",
+				{
+					caughtErrorsIgnorePattern: "^_",
+					argsIgnorePattern: "^_",
+					varsIgnorePattern: "^_"
+				}
+			]
+		}
+	},
+	{
 		ignores: ["build/", ".svelte-kit/", "dist/", "src/lib/paraglide"]
 	}
 );

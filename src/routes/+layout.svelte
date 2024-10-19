@@ -5,6 +5,8 @@
 	import "../app.css";
 </script>
 
-<ParaglideJS {i18n}>
-	<slot></slot>
-</ParaglideJS>
+<div class="flex h-full items-center justify-center">
+	<ParaglideJS {i18n}>
+		<slot></slot>
+	</ParaglideJS>
+</div>

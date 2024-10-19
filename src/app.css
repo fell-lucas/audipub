@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		height: 100%;
+	}
+
+	html,
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	body {
+		flex-grow: 1;
+	}
+
 	:root {
 		--background: 0 0% 100%;
 		--foreground: 224 71.4% 4.1%;

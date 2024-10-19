@@ -1,6 +1,10 @@
 <script>
-	import Button from "$lib/components/ui/button/button.svelte";
+	import Input from "$lib/components/ui/input/input.svelte";
+	import Label from "$lib/components/ui/label/label.svelte";
 	import * as m from "$lib/paraglide/messages.js";
 </script>
 
-<Button>{m.click_me()}</Button>
+<div class="grid w-full max-w-sm items-center gap-1.5">
+	<Label for="picture">{m.upload_ebook()}</Label>
+	<Input id="picture" type="file" />
+</div>
