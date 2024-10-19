@@ -11,6 +11,8 @@ concurrency:
 
 jobs:
   release:
+    permissions:
+      contents: write
     name: 🔖 Release
     runs-on: ubuntu-latest
     steps:
@@ -24,5 +26,5 @@ jobs:
           createGithubReleases: true
           publish: pnpm changeset publish
           version: pnpm changeset version
-          commit: 'chore(release): 🔖 publish'
-          title: 'chore(release): 🔖 publish'
+          commit: "chore(release): 🔖 publish"
+          title: "chore(release): 🔖 publish"
