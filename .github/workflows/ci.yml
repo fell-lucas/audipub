@@ -1,0 +1,28 @@
+name: 🏗️ Lint/Build/Test
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - production
+      - changeset-release/*
+      - release/*
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test:
+    # Do not run tests again for release merges
+    if: github.event.commits[0].author.name != 'github-actions[bot]'
+    name: 🧹 Lint and 🧪 Test
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fell-lucas/setup-pnpm-action@main
+      - run: pnpm build
+      - run: pnpm check
+      - run: pnpm lint
+      - run: pnpm playwright install --with-deps chromium
+      - run: pnpm test
