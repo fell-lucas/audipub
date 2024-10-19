@@ -3,7 +3,6 @@ name: 🏗️ Lint/Build/Test
 on:
   push:
     branches-ignore:
-      - main
       - production
       - changeset-release/*
       - release/*
@@ -24,5 +23,5 @@ jobs:
       - run: pnpm build
       - run: pnpm check
       - run: pnpm lint
-      - run: pnpm playwright install --with-deps chromium
+      - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test
